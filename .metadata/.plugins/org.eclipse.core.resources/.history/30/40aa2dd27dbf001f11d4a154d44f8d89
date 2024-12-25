@@ -1,0 +1,26 @@
+package com.sathya.employeeexample.controller;
+
+import org.springframework.stereotype.Controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.sathya.employee.model.EmployeeModel;
+
+
+@Controller
+public class employeeController {
+	@GetMapping("/employeeform")
+	public String employyeForm()
+	{
+		return "employeeForm";
+	}
+	@PostMapping("/saveemployee")
+	public String postMethodName(EmployeeModel employeeModel) {
+		//TODO: process POST request
+		System.out.println(employeeModel);
+		return "success";
+	}
+	
+
+}

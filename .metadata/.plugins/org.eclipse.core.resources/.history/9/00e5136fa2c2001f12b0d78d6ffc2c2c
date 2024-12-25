@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<style>
+		    /* General Styling */
+		    body {
+		        background-color: black;
+		        color: #ff4d4d; /* Bright red text color */
+		        font-family: Arial, sans-serif;
+		    }
+
+		    button {
+		        color: #ff4d4d;
+				background-color: black;
+				border: 2px solid red;
+				border-radius: 3px;
+				padding: 5px;
+		    }
+
+		</style>
+	</head>
+	<body>
+		<a href="http://localhost:1111/productform"><button>Add-product</button></a>
+		<a href="http://localhost:1111/getallproducts"><button>ALL-PRODUCTS</button></a>
+		<a href="http://localhost:1111/h2-console"><button>H2-CONSOLE</button></a>
+
+	</body>
+</html>

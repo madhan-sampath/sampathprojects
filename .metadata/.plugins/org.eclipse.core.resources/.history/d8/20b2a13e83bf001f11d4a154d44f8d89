@@ -1,0 +1,18 @@
+package com.sathya.employee.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sathya.employee.model.EmployeeModel;
+import com.sathya.employee.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeRepository employeeRepository;
+
+	public void calculate(EmployeeModel employeeModel) {
+			
+	}
+
+}

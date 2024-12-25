@@ -1,0 +1,23 @@
+package com.Sathya.springmvc.builder;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+public class EmployeeBuilder {
+	private int id;
+	private String name;
+	private double salary;
+	public static void main(String[] args) {
+		EmployeeBuilder employeeBuilder = EmployeeBuilder.builder()
+							   .id(111)
+							   .name("ram")
+							   .salary(1000)
+							   .build();
+		System.out.println(employeeBuilder);
+	}
+}

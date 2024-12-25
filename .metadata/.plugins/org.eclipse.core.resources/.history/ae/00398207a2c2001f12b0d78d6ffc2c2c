@@ -1,0 +1,8 @@
+<html>
+	<body>
+		<a href="http://localhost:1111/productform"><button>Add-product</button></a>
+		<a href="http://localhost:1111/getallproducts"><button>ALL-PRODUCTS</button></a>
+		<a href="http://localhost:1111/h2-console"><button>H2-CONSOLE</button></a>
+
+	</body>
+</html>

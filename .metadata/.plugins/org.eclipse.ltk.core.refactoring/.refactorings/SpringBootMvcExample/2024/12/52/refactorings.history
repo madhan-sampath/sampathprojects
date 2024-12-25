@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringBootMvcExample/src/main/resources/templates/myview.html&apos; to &apos;home.html&apos;" description="Rename resource &apos;myview.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/myview.html" name="home.html" stamp="1735118400971" updateReferences="true"/>
+</session>

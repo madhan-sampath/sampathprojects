@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Success</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: black;
+            color: #ff4d4d; /* Bright red text */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            animation: fadeIn 2s ease-in-out, bounceIn 1s ease-in-out infinite alternate;
+            text-shadow: 0 0 10px #ff4d4d;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 100% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Form Submitted Successfully</h1>
+</body>
+</html>

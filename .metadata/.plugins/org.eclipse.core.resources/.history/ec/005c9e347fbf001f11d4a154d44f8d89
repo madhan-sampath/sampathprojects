@@ -1,0 +1,5 @@
+package com.sathya.employee.repository;
+
+public class EmployeeRepository {
+
+}

@@ -1,0 +1,14 @@
+package com.Sathya.springmvc.calculate;
+
+public class Calculate {
+	public void calculate()
+    {
+    	taxRate = 18;
+    	discountPrice = (discountRate/100) * price;
+    	offerPrice = price - discountPrice;
+    	finalPrice = offerPrice + ((taxRate/100)*offerPrice);
+    	stackValue = price * quantity;
+    }
+   
+
+}

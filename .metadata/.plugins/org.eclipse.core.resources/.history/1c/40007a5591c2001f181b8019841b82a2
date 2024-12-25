@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Add Form</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+        <style>
+            /* General Styling */
+            body {
+                background-color: black;
+                color: #ff4d4d; /* Bright red text color */
+                font-family: Arial, sans-serif;
+            }
+
+            h1, label {
+                color: #ff4d4d;
+            }
+
+            /* Form Container Styling */
+            .form-container {
+                margin-top: 50px;
+                background-color: #121212; /* Slightly lighter black for contrast */
+                border: 2px solid #ff4d4d;
+                border-radius: 10px;
+                padding: 30px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0 0 20px #ff4d4d, 0 0 30px #ff6666;
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            /* Input Fields */
+            input[type="text"], input[type="number"] {
+                background-color: black;
+                border: 2px solid #ff4d4d;
+                color: #ff4d4d;
+                border-radius: 5px;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+                transition: all 0.3s ease-in-out;
+            }
+
+            input[type="text"]:focus, input[type="number"]:focus {
+                outline: none;
+                box-shadow: 0 0 15px #ff6666;
+                transform: scale(1.05);
+            }
+
+            /* Submit Button */
+            input[type="submit"] {
+                background-color: #ff4d4d;
+                color: black;
+                border: none;
+                padding: 10px 20px;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 100%;
+                box-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+                transition: transform 0.3s ease, background-color 0.3s ease;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #ff6666;
+                transform: scale(1.1);
+                box-shadow: 0 0 15px rgba(255, 102, 102, 0.8);
+            }
+
+            /* Animations */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes pulse {
+                0%, 100% {
+                    box-shadow: 0 0 10px #ff4d4d, 0 0 20px #ff6666;
+                }
+                50% {
+                    box-shadow: 0 0 20px #ff6666, 0 0 30px #ff9999;
+                }
+            }
+
+            input[type="submit"]:hover {
+                animation: pulse 1.5s infinite;
+            }
+
+            /* Add spacing between form fields */
+            .form-group {
+                margin-bottom: 20px;
+            }
+			.error{
+				color: red;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="form-container">
+            <form th:action="@{/saveproduct}" method="post" th:object="${productModel}">
+                <div class="form-group">
+                    <label for="name">Name :</label>
+                    <input type="text" name="name" id="name">
+					<p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="brand">Brand :</label>
+                    <input type="text" name="brand" id="brand">
+					<p class="error" th:if="${#fields.hasErrors('brand')}" th:errors="*{brand}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="madeIn">Made In :</label>
+                    <input type="text" name="madeIn" id="madeIn">
+					<p class="error" th:if="${#fields.hasErrors('madeIn')}" th:errors="*{madeIn}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price :</label>
+                    <input type="number" name="price" id="price" >
+					<p class="error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity :</label>
+                    <input type="number" name="quantity" id="quantity" >
+					<p class="error" th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}"></p>
+
+                </div>
+                <div class="form-group">
+                    <label for="discountRate">Discount Rate :</label>
+                    <input type="number" name="discountRate" >
+					<p class="error" th:if="${#fields.hasErrors('discountRate')}" th:errors="*{discountRate}"></p>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

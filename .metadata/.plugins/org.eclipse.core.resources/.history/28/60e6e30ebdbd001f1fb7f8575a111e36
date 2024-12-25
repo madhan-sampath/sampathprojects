@@ -1,0 +1,17 @@
+package com.Sathya.springmvc.calculate;
+
+import com.Sathya.springmvc.entity.ProductEntity;
+
+public class Calculate {
+	ProductEntity productEntity;
+	public void calculate()
+    {
+    	taxRate = 18;
+    	discountPrice = (discountRate/100) * price;
+    	offerPrice = price - discountPrice;
+    	finalPrice = offerPrice + ((taxRate/100)*offerPrice);
+    	stackValue = price * quantity;
+    }
+   
+
+}

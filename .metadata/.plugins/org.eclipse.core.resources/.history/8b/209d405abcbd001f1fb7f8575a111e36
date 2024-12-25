@@ -1,0 +1,5 @@
+package com.Sathya.springmvc.calculate;
+
+public class Calculate {
+
+}

@@ -1,0 +1,34 @@
+package com.sathya.employee.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sathya.employee.entity.EmployeeEntity;
+import com.sathya.employee.model.EmployeeModel;
+import com.sathya.employee.repository.EmployeeRepository;
+
+@Service
+public class EmployeeService {
+	@Autowired
+	EmployeeRepository employeeRepository;
+
+	public void calculate(EmployeeModel employeeModel) {
+
+		double da;
+		double hra;
+		double bonus;
+		double totalSalary;
+		double taxRate;
+		double finalSalary;
+		
+		da = employeeModel.getBasicSalary() * 10 / 100;
+		hra = employeeModel.getBasicSalary() * 20 / 100;
+		bonus = employeeModel.getBasicSalary() * 5 / 100;
+		totalSalary =  employeeModel.getBasicSalary() + da + hra + bonus;
+		taxRate = 18;
+		finalSalary = totalSalary-(totalSalary * taxRate / 100);
+		
+		EmployeeEntity employeeEntity=new EmployeeEntity();
+	}
+
+}

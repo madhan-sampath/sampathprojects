@@ -1,0 +1,46 @@
+package com.Sathya.springmvc.controller;
+
+import java.util.*;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import com.Sathya.springmvc.entity.ProductEntity;
+import com.Sathya.springmvc.model.ProductModel;
+import com.Sathya.springmvc.service.ProductService;
+
+
+
+@Controller
+public class ProductController {
+		@Autowired
+		ProductService productService;
+		
+		@GetMapping("/test")
+		public String greet() {
+			return "myview";
+		}
+		@GetMapping("/productform")
+		public String getForm() {
+					return "add-product";
+			
+		}
+		@PostMapping("/saveproduct")
+		public String saveProductDetails(ProductModel productModel) {
+			productService.saveProductDetails(productModel);
+			return "success";
+		}
+		
+		//adding products to model class object
+		//passing product details to view layer
+		@GetMapping("/getallproducts")
+		public String getAllProducts(Model model) {
+			List<ProductEntity> products= productService.getAllProducts();
+			model.addAttribute("products",products)
+			return "productlist";
+		}
+		
+		
+}

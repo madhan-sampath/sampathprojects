@@ -1,0 +1,32 @@
+package com.Sathya.springmvc.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.Sathya.springmvc.entity.ProductEntity;
+import com.Sathya.springmvc.model.ProductModel;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+public class Service {
+	@Autowired
+	ProductModel productModel;
+	public void calculate() {
+		double taxRate;
+    	taxRate = 18;
+    	double discountPrice;
+    	discountPrice =productModel.getPrice() * productModel.getDiscountRate()/100;
+    	
+    	double offerPrice;
+    	offerPrice = productModel.getPrice() - discountPrice;
+    	
+    	double finalPrice;
+    	finalPrice = offerPrice + ((taxRate/100)*offerPrice);
+    	
+    	double stackValue;
+    	stackValue = productModel.getPrice() * productModel.getQuantity()
+    }
+   
+
+}
